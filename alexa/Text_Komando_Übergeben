@@ -1,0 +1,72 @@
+<block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="-1@}V/TvQR]95j%N2q~3" x="-537.33203125" y="262.4648437499999">
+  <mutation>
+    <arg name="auszuführendes_Kommando" varid="hGO{G|sbj?WX:u*KZk4,"></arg>
+  </mutation>
+  <field name="NAME">etwas tun</field>
+  <comment pinned="false" h="80" w="160">Beschreibe diese Funktion …</comment>
+  <statement name="STACK">
+    <block type="comment" id="1k4hzG9NV~RUZe%OErvq">
+      <field name="COMMENT">Lautstärke auf 0, Kommando wird mit "OK" bestätigt</field>
+      <next>
+        <block type="control" id="vH[iyw$1-TVlbibnyCU/">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+          <field name="OID">alexa2.0.Echo-Devices.G000RA0992150ACV.Player.volume</field>
+          <field name="WITH_DELAY">FALSE</field>
+          <value name="VALUE">
+            <block type="math_number" id=":@%Uc5Ra=5.BeEKSEb4|">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <next>
+            <block type="comment" id="dWMQmDMRh[ASb=_T(m@Q">
+              <field name="COMMENT">Text Kommando übergeben</field>
+              <next>
+                <block type="control" id="7Z9!uxXNAlmjxpEPtx1Y">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                  <field name="OID">alexa2.0.Echo-Devices.G000RA0992150ACV.Commands.textCommand</field>
+                  <field name="WITH_DELAY">FALSE</field>
+                  <value name="VALUE">
+                    <block type="variables_get" id="W3L:5((i!QHJAioy[PC(">
+                      <field name="VAR" id="DbiYK]EP%W%2:`}IO;lG">Kommando</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="comment" id="5H2Kfs$8!HX[e;,f@rkA">
+                      <field name="COMMENT">Lautstärke auf 3</field>
+                      <next>
+                        <block type="control" id="x0[7rf%)$bA)iHYAK3^O">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                          <field name="OID">alexa2.0.Echo-Devices.G000RA0992150ACV.Player.volume</field>
+                          <field name="WITH_DELAY">TRUE</field>
+                          <field name="DELAY_MS">5</field>
+                          <field name="UNIT">sec</field>
+                          <field name="CLEAR_RUNNING">FALSE</field>
+                          <value name="VALUE">
+                            <block type="math_number" id="0Xxx)q6uIpK)CIQbF.S0">
+                              <field name="NUM">3</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </statement>
+</block>
+
+<block xmlns="https://developers.google.com/blockly/xml" type="procedures_callnoreturn" id="L|@}SJ(}9J6]{@@wajms" x="-612.11328125" y="512.4140624999998">
+  <mutation name="etwas tun">
+    <arg name="auszuführendes_Kommando"></arg>
+  </mutation>
+  <value name="ARG0">
+    <block type="text" id="b3*`||xt`c/s`sL4-KJF">
+      <field name="TEXT">Alexa Display aus</field>
+    </block>
+  </value>
+</block>

@@ -1,0 +1,77 @@
+<block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="9lX$D@dP@S=IE1S/v=KX" x="-662" y="437">
+  <field name="NAME">Funktion_Nachricht_senden_mit_Bildanhang</field>
+  <comment pinned="false" h="80" w="160">Beschreibe diese Funktion …</comment>
+  <statement name="STACK">
+    <block type="exec" id="O2;bp1{k+{LPa25#D|]r">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" with_statement="false"></mutation>
+      <field name="WITH_STATEMENT">FALSE</field>
+      <field name="LOG">log</field>
+      <value name="COMMAND">
+        <shadow type="text" id="XDM*1+oW3Dr.4K.iqh]Y">
+          <field name="TEXT"></field>
+        </shadow>
+        <block type="text" id="0V%ie%M!}u18)7]Uirp|">
+          <field name="TEXT">ffmpeg -i http://IP-Adresse:PORT/cam.mjpeg -vframes 1 -y /home/BENUTZER/Bild.jpg</field>
+        </block>
+      </value>
+      <next>
+        <block type="timeouts_wait" id="d1p|2KSqT_@]3NqNDC--">
+          <field name="DELAY">1</field>
+          <field name="UNIT">sec</field>
+          <next>
+            <block type="pushover" id="){:0F*cR0m6+)=2Kul},">
+              <field name="INSTANCE"></field>
+              <field name="SOUND">bike</field>
+              <field name="PRIORITY">1</field>
+              <field name="LOG"></field>
+              <value name="MESSAGE">
+                <shadow type="text" id="Hn_jLWAKVz+8wzoJ+K~?">
+                  <field name="TEXT">Gewächshaus - &gt; 35°C</field>
+                </shadow>
+                <block type="text_join" id="|6Y6(7KwF@4;~}Mh@$:u">
+                  <mutation items="1"></mutation>
+                  <value name="ADD0">
+                    <block type="text" id="am}*2LeX@I5JS{3X:tPP">
+                      <field name="TEXT">Hier der Text</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="SOUND_CUSTOM">
+                <shadow type="text" id="OH?rs#9ClRmUNGEZW`C=">
+                  <field name="TEXT"></field>
+                </shadow>
+              </value>
+              <value name="ATTACHMENT">
+                <block type="text" id="44R%/Cfv!Yg%`@1rysTJ">
+                  <field name="TEXT">/home/BENUTZER/Bild.jpg</field>
+                </block>
+              </value>
+              <next>
+                <block type="timeouts_wait" id="VICbPH#Kk@jV.O29TyLO">
+                  <field name="DELAY">2</field>
+                  <field name="UNIT">sec</field>
+                  <next>
+                    <block type="exec" id="PwI,n,Qcg(.z4e(]uM$l">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" with_statement="false"></mutation>
+                      <field name="WITH_STATEMENT">FALSE</field>
+                      <field name="LOG">log</field>
+                      <value name="COMMAND">
+                        <shadow type="text" id="@EAs0![d9lw{Z:P!m({P">
+                          <field name="TEXT"></field>
+                        </shadow>
+                        <block type="text" id="H8TJ[Hz7*xcogrEss{Lp">
+                          <field name="TEXT">rm /home/BENUTZER/Bild.jpg</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </statement>
+</block>

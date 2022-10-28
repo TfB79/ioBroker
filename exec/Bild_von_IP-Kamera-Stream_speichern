@@ -1,0 +1,13 @@
+<block xmlns="https://developers.google.com/blockly/xml" type="exec" id="O2;bp1{k+{LPa25#D|]r" x="-312" y="588">
+  <mutation xmlns="http://www.w3.org/1999/xhtml" with_statement="false"></mutation>
+  <field name="WITH_STATEMENT">FALSE</field>
+  <field name="LOG">log</field>
+  <value name="COMMAND">
+    <shadow type="text" id="XDM*1+oW3Dr.4K.iqh]Y">
+      <field name="TEXT"></field>
+    </shadow>
+    <block type="text" id="0V%ie%M!}u18)7]Uirp|">
+      <field name="TEXT">ffmpeg -i http://IP-der-Kamera:PORT/cam.mjpeg -vframes 1 -y /home/BENUTZER/Bild.jpg</field>
+    </block>
+  </value>
+</block>
